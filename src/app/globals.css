@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sting-bg: #0A0F0E;
+  --sting-strawberry: #E63946;
+  --sting-strawberry-dark: #C41E3A;
+  --sting-white: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--sting-bg);
+  color: white;
+}
+
+/* Prevent layout shift during preloader */
+body.preloading {
+  overflow: hidden;
+  height: 100vh;
+}
+
+body.preloading-off {
+  overflow: auto;
+}
+
+@keyframes sting-flicker {
+  0%, 100% { opacity: 1; box-shadow: 0 0 20px rgba(230, 57, 70, 0.6); }
+  25% { opacity: 0.9; box-shadow: 0 0 28px rgba(230, 57, 70, 0.8); }
+  50% { opacity: 1; box-shadow: 0 0 18px rgba(230, 57, 70, 0.5); }
+  75% { opacity: 0.95; box-shadow: 0 0 32px rgba(230, 57, 70, 0.9); }
+}
+
+.sting-cta:hover {
+  animation: sting-flicker 0.4s ease-in-out infinite;
+}
